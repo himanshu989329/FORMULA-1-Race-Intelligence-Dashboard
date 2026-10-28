@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#04040a">
+    <meta name="description" content="Explore Formula 1 race results through an interactive Tableau dashboard and story. 6,464 race records analyzed across 17 seasons.">
+    <title>F1 Race Intelligence | Night Grand Prix Cyber-Telemetry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="night-prix-theme">
+    <!-- Ambient Neon Aurora Lighting -->
+    <div class="neon-ambient-glow neon-cyan-glow" aria-hidden="true"></div>
+    <div class="neon-ambient-glow neon-magenta-glow" aria-hidden="true"></div>
+    <div class="neon-ambient-glow neon-purple-glow" aria-hidden="true"></div>
+
+    <!-- Night Prix Cyber Navigation -->
+    <header class="cyber-header">
+      <div class="header-container">
+        <a class="cyber-brand" href="#top" aria-label="F1 Race Intelligence Home">
+          <div class="cyber-logo-orb">
+            <span class="f1-text">F1</span>
+          </div>
+          <div class="brand-copy">
+            <span class="brand-main">RACE INTELLIGENCE</span>
+            <span class="brand-spec">NIGHT PRIX · ANALYTICS LAB</span>
+          </div>
+        </a>
+
+        <nav class="cyber-nav" aria-label="Main Navigation">
+          <a href="#overview" class="cyber-nav-item">Telemetry</a>
+          <a href="#dashboard" class="cyber-nav-item">Story Console</a>
+          <a href="#scenes" class="cyber-nav-item">Visual Matrix</a>
+          <a href="#methodology" class="cyber-nav-item">Data Scope</a>
+          <a href="docs/project-report.md" class="cyber-nav-item report-link">Report ↗</a>
+        </nav>
+
+        <div class="header-cta">
+          <a class="cyber-btn-git" href="https://github.com/himanshu989329/FORMULA-1-Race-Intelligence-Dashboard" target="_blank" rel="noreferrer" aria-label="GitHub Repository">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Centered Neon Prix Hero -->
+      <section class="cyber-hero" id="overview">
+        <div class="hero-inner-centered">
+          <div class="neon-pill-chip">
+            <span class="pulse-ring"></span>
+            <span class="chip-text">SINGAPORE & LAS VEGAS FLOODLIGHTS // 2010–2026 ARCHIVE</span>
+          </div>
+
+          <h1 class="cyber-hero-title">
+            EVERY RACE TELLS A<br>
+            <span class="neon-gradient-text">DATA STORY.</span>
+          </h1>
+
+          <p class="cyber-hero-subtitle">
+            A neon-charged analytical synthesis across <strong>6,464 race records</strong> and <strong>17 Formula 1 seasons</strong>. Decouple constructor dynamics, weather variance, tyre compounds, and driver attrition inside an interactive visual architecture.
+          </p>
+
+          <div class="cyber-hero-buttons">
+            <a class="neon-btn-primary" href="#dashboard">
+              <span class="btn-shimmer"></span>
+              <span>LAUNCH STORY CONSOLE</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </a>
+            <a class="neon-btn-glass" href="https://public.tableau.com/app/profile/himanshu.patil7002/viz/f1-dashboard_17931214144770/Dashboard1?publish=yes" target="_blank" rel="noreferrer">
+              <span>OPEN TABLEAU CLOUD</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+
+          <!-- Circular Floating Telemetry Stats Grid -->
+          <div class="cyber-stats-matrix" aria-label="Key Dataset Indicators">
+            <div class="cyber-stat-orb">
+              <div class="orb-ring cyan"></div>
+              <span class="orb-value">6,464</span>
+              <span class="orb-label">RACE SAMPLES</span>
+              <span class="orb-sub">Individual driver rows</span>
+            </div>
+
+            <div class="cyber-stat-orb">
+              <div class="orb-ring magenta"></div>
+              <span class="orb-value">17</span>
+              <span class="orb-label">F1 SEASONS</span>
+              <span class="orb-sub">2010 – 2026 Archive</span>
+            </div>
+
+            <div class="cyber-stat-orb">
+              <div class="orb-ring purple"></div>
+              <span class="orb-value">09</span>
+              <span class="orb-label">STORY SCENES</span>
+              <span class="orb-sub">Sequential viewpoints</span>
+            </div>
+
+            <div class="cyber-stat-orb">
+              <div class="orb-ring yellow"></div>
+              <span class="orb-value">100%</span>
+              <span class="orb-label">CLOUD STREAM</span>
+              <span class="orb-sub">Tableau Public Engine</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Night Prix Story Console (Iframe Embed) -->
+      <section class="cyber-dashboard-section" id="dashboard">
+        <div class="dashboard-wrapper">
+          <div class="cyber-section-header">
+            <div class="header-title-group">
+              <span class="neon-subhead">// INTERACTIVE TABLEAU STORYPOINT</span>
+              <h2 class="cyber-heading">Race Intelligence Story Console</h2>
+            </div>
+
+            <div class="cyber-control-bar">
+              <button class="control-pill" id="cyberFullscreenBtn" type="button" title="Toggle Fullscreen">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                <span>Fullscreen</span>
+              </button>
+              <button class="control-pill" id="cyberReloadBtn" type="button" title="Refresh Tableau stream">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                <span>Refresh</span>
+              </button>
+              <button class="control-pill" id="cyberCopyBtn" type="button" title="Copy Tableau Story Link">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy URL</span>
+              </button>
+              <a class="control-pill highlight" href="https://public.tableau.com/app/profile/himanshu.patil7002/viz/f1-dashboard_17931214144770/Dashboard1?publish=yes" target="_blank" rel="noreferrer">
+                <span>Direct View ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Glassmorphic Cockpit Shell -->
+          <div class="cyber-glass-shell" id="cyberShell">
+            <div class="shell-glow-border"></div>
+            <div class="shell-top-nav">
+              <div class="telemetry-pills">
+                <span class="tele-dot cyan"></span>
+                <span class="tele-dot magenta"></span>
+                <span class="tele-dot green"></span>
+                <span class="tele-label">LIVE STREAM: TABLEAU PUBLIC · CLOUD EMBED</span>
+              </div>
+            </div>
+
+            <div class="cyber-frame-wrapper">
+              <iframe
+                id="cyberIframe"
+                title="F1 Race Intelligence Tableau Public Story"
+                src="https://public.tableau.com/app/profile/himanshu.patil7002/viz/f1-story/Story1?publish=yes"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+
+            <div class="shell-bottom-bar">
+              <span class="fallback-note">If blocked by third-party cookie restrictions, <a href="https://public.tableau.com/app/profile/himanshu.patil7002/viz/f1-dashboard_17931214144770/Dashboard1?publish=yes" target="_blank" rel="noreferrer">open directly on Tableau Public</a>.</span>
+              <span class="sheet-indicator">SOURCE: race_results</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 Visual Scenes Matrix -->
+      <section class="cyber-scenes-section" id="scenes">
+        <div class="scenes-wrapper">
+          <div class="scenes-header">
+            <span class="neon-subhead">// NINE NARRATIVE VISIONS</span>
+            <h2 class="cyber-heading">What You Can Explore</h2>
+            <p class="scenes-subtitle">Explore the sequential scenes comprising this 9-part Formula 1 story.</p>
+          </div>
+
+          <!-- Filter Pill Tabs -->
+          <div class="cyber-tabs" role="tablist">
+            <button class="cyber-tab-btn active" data-filter="all" role="tab" aria-selected="true">All Cyber-Views (9)</button>
+            <button class="cyber-tab-btn" data-filter="drivers" role="tab" aria-selected="false">Drivers & Teams (4)</button>
+            <button class="cyber-tab-btn" data-filter="reliability" role="tab" aria-selected="false">Safety & Attrition (2)</button>
+            <button class="cyber-tab-btn" data-filter="strategy" role="tab" aria-selected="false">Compounds & Circuits (3)</button>
+          </div>
+
+          <!-- 9 Cyber Cards Grid -->
+          <div class="cyber-grid">
+            <!-- Scene 01 -->
+            <article class="cyber-card" data-category="drivers">
+              <div class="card-neon-aura"></div>
+              <div class="card-badge-row">
+                <span class="neon-index-badge">01</span>
+                <span class="card-genre">CONSTRUCTOR PROGRESSION</span>
+              </div>
+              <h3 class="cyber-card-title">Team points by season</h3>
+              <p class="cyber-card-desc">Compare team points from one season to another across the modern Formula 1 era.</p>
+              <div class="cyber-card-foot">
+                <span class="agg-chip">SUM(Points)</span>
+                <span class="track-tag">Season Trend</span>
+              </div>
+            </article>
+
+            <!-- Scene 02 -->
+            <article class="cyber-card" data-category="drivers">
+              <div class="card-neon-aura"></div>
+              <div class="card-badge-row">
+                <span class="neon-index-badge">02</span>
+                <span class="card-genre">PILOT HIERARCHY</span>
+              </div>
+              <h3 class="cyber-card-title">Driver points leaderboard</h3>
+              <p class="cyber-card-desc">See how driver point totals rank across all drivers present in this dataset.</p>
+              <div class="cyber-card-foot">
+                <span class="agg-chip">SUM(Points)</span>
+                <span class="track-tag">Leaderboard</span>
+              </div>
+            </article>
+
+            <!-- Scene 03 -->
+            <article class="cyber-card" data-category="reliability">
+              <div class="card-neon-aura"></div>
+              <div class="card-badge-row">
+                <span class="neon-index-badge">03</span>
+                <span class="card-genre">ATTRITION TAXONOMY</span>
+              </div>
+              <h3 class="cyber-card-title">Non-finishes by reason</h3>
+              <p class="cyber-card-desc">Review the recorded DNF reason categories, from engine faults to collision damage.</p>
+              <div class="cyber-card-foot">
+                <span class="agg-chip">COUNT(Dnf)</span>
+                <span class="track-tag">Reliability</span>
+              </div>
+            </article>
+
+            <!-- Scene 04 -->
+            <article class="cyber-card" data-category="reliability">
+              <div class="card-neon-aura"></div>
+              <div class="card-badge-row">
+                <span class="neon-index-badge">04</span>
+                <span class="card-genre">WEATHER CORRELATION</span>
+              </div>
+              <h3 class="cyber-card-title">Non-finish rate by weather</h3>
+              <p class="cyber-card-desc">Compare the average DNF flag across weather labels to evaluate rain and heat risks.</p>
+              <div class="cyber-card-foot">
+                <span class="agg-chip">AVG(Dnf)</span>
+                <span class="track-tag">Risk Percentage</span>
+              </div>
+            </article>
+
+            <!-- Scene 05 -->
+            <article class="cyber-card" data-category="drivers">
+              <div class="card-neon-aura"></div>
+              <div class="card-badge-row">
+                <span class="neon-index-badge">05</span>
+                <span class="card-genre">TEAM CUMULATIVE</span>
+              </div>
+              <h3 class="cyber-card-title">Team points leaderboard</h3>
+              <p class="cyber-card-desc">Compare total points by constructor team to observe long-term championship dominance.</p>
+              <div class="cyber-card-foot">
+                <span class="agg-chip">SUM(Points)</span>
+                <span class="track-tag">Constructor Ranking</span>
+              </div>
+            </article>
+
+            <!-- Scene 06 -->
+            <article class="cyber-card" data-category="strategy">
+              <div class="card-neon-aura"></div>
+              <div class="card-badge-row">
+                <span class="neon-index-badge">06</span>
+                <span class="card-genre">OVERTAKE DYNAMICS</span>
+              </div>
+              <h3 class="cyber-card-title">Average positions gained</h3>
+              <p class="cyber-card-desc">Compare the average positions-gained measure by team from starting grid to finish line.</p>
+              <div class="cyber-card-foot">
+                <span class="agg-chip">AVG(Positions Gained)</span>
+                <span class="track-tag">Race Recovery</span>
+              </div>
+            </article>
+
+            <!-- Scene 07 -->
+            <article class="cyber-card" data-category="strategy">
+              <div class="card-neon-aura"></div>
+              <div class="card-badge-row">
+                <span class="neon-index-badge">07</span>
+                <span class="card-genre">COMPOUND MATRIX</span>
+              </div>
+              <h3 class="cyber-card-title">Starting tyre distribution</h3>
+              <p class="cyber-card-desc">Explore the recorded starting compound counts (Soft, Medium, Hard, Wet, Inters).</p>
+              <div class="cyber-card-foot">
+                <span class="agg-chip">COUNT(Tyre)</span>
+                <span class="track-tag">Tactics</span>
+              </div>
+            </article>
+
+            <!-- Scene 08 -->
+            <article class="cyber-card" data-category="strategy">
+              <div class="card-neon-aura"></div>
+              <div class="card-badge-row">
+                <span class="neon-index-badge">08</span>
+                <span class="card-genre">TRACK ARCHITECTURE</span>
+              </div>
+              <h3 class="cyber-card-title">Points by circuit type</h3>
+              <p class="cyber-card-desc">Compare summed points across circuit categories (Street, High Speed, Permanent).</p>
+              <div class="cyber-card-foot">
+                <span class="agg-chip">SUM(Points)</span>
+                <span class="track-tag">Circuits</span>
+              </div>
+            </article>
+
+            <!-- Scene 09 -->
+            <article class="cyber-card" data-category="drivers">
+              <div class="card-neon-aura"></div>
+              <div class="card-badge-row">
+                <span class="neon-index-badge">09</span>
+                <span class="card-genre">MEAN EXECUTION</span>
+              </div>
+              <h3 class="cyber-card-title">Average finish position</h3>
+              <p class="cyber-card-desc">Compare mean finish position by team across all recorded Grand Prix starts.</p>
+              <div class="cyber-card-foot">
+                <span class="agg-chip">AVG(Finish)</span>
+                <span class="track-tag">Consistency</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Methodology & Scope Section -->
+      <section class="cyber-about-section" id="methodology">
+        <div class="about-wrapper">
+          <div class="glass-dossier-card">
+            <div class="dossier-text">
+              <span class="neon-subhead">// PROJECT SCOPE & PROVENANCE</span>
+              <h2 class="cyber-heading">A Clear View of the Data, With Its Limits</h2>
+              <p class="dossier-lead">This is an educational, descriptive analysis of one course-provided workbook sheet (<code>F1 Racing Project Dataset.xlsx</code>). It summarizes associations in the supplied records; it does not show that weather or tyre choice caused a race result. The source workbook is not redistributed here.</p>
+              <div class="dossier-action-row">
+                <a class="neon-btn-primary small" href="docs/project-report.md">
+                  <span>VIEW FULL REPORT</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="dossier-stats-box">
+              <div class="dossier-stat-row">
+                <span class="ds-num">6,464</span>
+                <div class="ds-meta">
+                  <strong>Total Records Processed</strong>
+                  <span>Extracted from <code>race_results</code> sheet</span>
+                </div>
+              </div>
+              <div class="dossier-stat-row">
+                <span class="ds-num">17</span>
+                <div class="ds-meta">
+                  <strong>Calendar Seasons</strong>
+                  <span>Historical range: 2010 through 2026</span>
+                </div>
+              </div>
+              <div class="dossier-stat-row">
+                <span class="ds-num">9</span>
+                <div class="ds-meta">
+                  <strong>Visual Scenes Constructed</strong>
+                  <span>Assembled into unified Tableau Story</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Night Prix Cyber Footer -->
+    <footer class="cyber-footer">
+      <div class="footer-container">
+        <div class="footer-brand-wrap">
+          <a class="cyber-brand" href="#top">
+            <div class="cyber-logo-orb small"><span class="f1-text">F1</span></div>
+            <div class="brand-copy">
+              <span class="brand-main">RACE INTELLIGENCE</span>
+              <span class="brand-spec">BY Himanshu Patil</span>
+            </div>
+          </a>
+          <p class="footer-blurb">Formula 1 Data Analytics Project & Interactive Tableau Story Point.</p>
+        </div>
+
+        <div class="footer-links-grid">
+          <div class="footer-links-col">
+            <span class="col-title">NAVIGATION</span>
+            <a href="#overview">Telemetry</a>
+            <a href="#dashboard">Story Console</a>
+            <a href="#scenes">Visual Matrix</a>
+            <a href="#methodology">Data Scope</a>
+          </div>
+          <div class="footer-links-col">
+            <span class="col-title">EXTERNAL</span>
+            <a href="docs/project-report.md">Project Report</a>
+            <a href="https://public.tableau.com/app/profile/himanshu.patil7002/viz/f1-dashboard_17931214144770/Dashboard1?publish=yes" target="_blank" rel="noreferrer">Tableau Public</a>
+            <a href="https://github.com/himanshu989329/FORMULA-1-Race-Intelligence-Dashboard" target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-legal-line">
+        <div class="neon-line-accent"></div>
+        <div class="legal-flex">
+          <span>&copy; Built by Himanshu Patil · Tableau Public Project</span>
+          <a href="#top" class="back-link">Return to Top ↑</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Toast -->
+    <div class="cyber-toast" id="cyberToast">
+      <span class="toast-indicator"></span>
+      <span id="cyberToastMsg">Link copied to clipboard</span>
+    </div>
+
+    <!-- Client Script -->
+    <script>
+      (function() {
+        const btnFullscreen = document.getElementById('cyberFullscreenBtn');
+        const shell = document.getElementById('cyberShell');
+        if (btnFullscreen && shell) {
+          btnFullscreen.addEventListener('click', function() {
+            if (!document.fullscreenElement) {
+              if (shell.requestFullscreen) shell.requestFullscreen();
+              else if (shell.webkitRequestFullscreen) shell.webkitRequestFullscreen();
+              btnFullscreen.querySelector('span').textContent = 'Exit Screen';
+            } else {
+              if (document.exitFullscreen) document.exitFullscreen();
+              btnFullscreen.querySelector('span').textContent = 'Fullscreen';
+            }
+          });
+          document.addEventListener('fullscreenchange', function() {
+            if (!document.fullscreenElement && btnFullscreen) {
+              btnFullscreen.querySelector('span').textContent = 'Fullscreen';
+            }
+          });
+        }
+
+        const btnReload = document.getElementById('cyberReloadBtn');
+        const iframe = document.getElementById('cyberIframe');
+        if (btnReload && iframe) {
+          btnReload.addEventListener('click', function() {
+            const src = iframe.src;
+            iframe.src = '';
+            setTimeout(function() {
+              iframe.src = src;
+              showToast('Stream refreshed');
+            }, 80);
+          });
+        }
+
+        const btnCopy = document.getElementById('cyberCopyBtn');
+        const directUrl = "https://public.tableau.com/app/profile/himanshu.patil7002/viz/f1-dashboard_17931214144770/Dashboard1?publish=yes";
+        if (btnCopy) {
+          btnCopy.addEventListener('click', function() {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(directUrl).then(function() {
+                showToast('Tableau Story URL copied!');
+              });
+            } else {
+              const t = document.createElement('textarea');
+              t.value = directUrl;
+              document.body.appendChild(t);
+              t.select();
+              document.execCommand('copy');
+              document.body.removeChild(t);
+              showToast('Tableau Story URL copied!');
+            }
+          });
+        }
+
+        const toast = document.getElementById('cyberToast');
+        const toastMsg = document.getElementById('cyberToastMsg');
+        let toastTimer;
+        function showToast(text) {
+          if (!toast) return;
+          if (toastMsg) toastMsg.textContent = text;
+          toast.classList.add('visible');
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(function() {
+            toast.classList.remove('visible');
+          }, 3000);
+        }
+
+        // Tabs
+        const tabBtns = document.querySelectorAll('.cyber-tab-btn');
+        const cards = document.querySelectorAll('.cyber-card');
+        tabBtns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            tabBtns.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+            const f = btn.getAttribute('data-filter');
+            cards.forEach(function(c) {
+              if (f === 'all' || c.getAttribute('data-category') === f) {
+                c.style.display = 'flex';
+                setTimeout(function() { c.style.opacity = '1'; c.style.transform = 'scale(1)'; }, 20);
+              } else {
+                c.style.opacity = '0';
+                c.style.transform = 'scale(0.97)';
+                setTimeout(function() { c.style.display = 'none'; }, 200);
+              }
+            });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
