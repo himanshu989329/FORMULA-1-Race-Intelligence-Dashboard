@@ -2,6 +2,12 @@
 
 # 🏁 F1 Race Intelligence
 
+### 🚀 [View Live Dashboard](https://f1-race-intelligence-dashboard-mocha.vercel.app)
+
+Explore the live dashboard in your browser.
+
+Explore the live dashboard in your browser.
+
 ### Formula 1 race results, explored through Tableau
 
 An interactive data analytics course project exploring team and driver points, non-finishes, weather, tyre compounds, and circuit types.
